@@ -1,0 +1,14 @@
+<h1> Add Bday Form </h1>
+<%= form_tag("/person_bdays") do %>
+<p>
+<%= label_tag "Name:" %>
+<%= text_field_tag "name" %></br>
+<%= label_tag "Date of Birth:" %>
+<%= date_field_tag "date_of_birth" %><br>
+<%= label_tag "Relation:" %>
+<%= text_field_tag "relation" %>
+<%= label_tag "Sharable:" %>
+<%= text_field_tag "sharable" %>
+</p>
+<%= submit_tag "Create Bday" %>
+<% end %>

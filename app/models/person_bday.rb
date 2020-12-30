@@ -1,0 +1,3 @@
+class PersonBday < ApplicationRecord
+
+end
