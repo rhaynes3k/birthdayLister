@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user.email = user_params[:email]
     @user.birthday = user_params[:birthday]
     @user.save
-    redirect_to user_path(@user)
+    redirect_to '/login'
   end
 
   def user_params
