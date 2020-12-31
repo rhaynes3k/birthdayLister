@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
   def new
+    if session[:current_user_id]
+      redirect_to "/", :notice => "Already logged in!"
+    end
+  end
+
+  def home
 
   end
 
@@ -17,12 +23,13 @@ class UsersController < ApplicationController
     @user.name = user_params[:name]
     @user.email = user_params[:email]
     @user.birthday = user_params[:birthday]
+    @user.password = user_params[:password]
     @user.save
     redirect_to '/login'
   end
 
   def user_params
-    params.permit(:name, :email, :birthday)
+    params.permit(:name, :email, :birthday, :password)
   end
 
 end
